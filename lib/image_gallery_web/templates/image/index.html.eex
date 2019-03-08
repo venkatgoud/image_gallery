@@ -1,0 +1,10 @@
+<div class="image_container">   
+<%= for image <- @images do %>     
+    <div class="image_column">
+      <a href="<%=Routes.image_path(@conn, :show, image)%>"><img src="<%= ImageGallery.Path.url({ image.path, image }) %>" width="300" height="300"/> </a>
+      <span class="image_caption"><%= image.caption %></span>
+      <%= link "Edit", to: Routes.image_path(@conn, :edit, image) %> </td>
+      <%= link "Delete", to: Routes.image_path(@conn, :delete, image), method: :delete, data: [confirm: "Are you sure?"] %> </td>
+    </div>       
+<% end %> 
+</div>

@@ -1,0 +1,9 @@
+<h1>Show Image</h1>
+
+<ul>
+  <div class="image_column">    
+    <img src="<%= ImageGallery.Path.url({ @image.path, @image }) %>" width="300" />
+    <div class="image_caption"><%= @image.caption %> </div>    
+    <span><%= link "Edit", to: Routes.image_path(@conn, :edit, @image) %></span>
+  </div>
+</ul>
